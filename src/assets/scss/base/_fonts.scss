@@ -1,0 +1,36 @@
+@font-face {
+  font-family: $ff-base;
+  src: url('../fonts/georgex-regular.woff2') format('woff2'),
+      url('../fonts/georgex-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $ff-base-2;
+  src: url('../fonts/suisse-bp-intl-regular.woff2') format('woff2'),
+      url('../fonts/suisse-bp-intl-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $ff-base-2;
+  src: url('../fonts/suisse-bp-intl-light.woff2') format('woff2'),
+      url('../fonts/suisse-bp-intl-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $ff-base-2;
+  src: url('../fonts/suisse-bp-intl-ultralight.woff2') format('woff2'),
+      url('../fonts/suisse-bp-intl-ultralight.woff') format('woff');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
