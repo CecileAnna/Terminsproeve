@@ -1,11 +1,16 @@
 // variables & functions
-@import 'properties';
+@import "properties";
 // base & layout
-@import 'cssreset';
+@import "cssreset";
+//utility classes
+@import "utility-classes";
 
 // colors
 
 // components (button, card, navbar etc)
-@import './components/_btn'
+@import "./components/btn";
 
 // utilities (margin, padding, opacity, etc)
+
+// font
+@import url("https://use.typekit.net/wfj6cre.css");

@@ -1,10 +1,7 @@
-
-const Btn = () => {
-  return (
-    <>
-      <button className="btn">Test</button>
-    </>
-  );
-};
-
+const Btn = (props) => {
+    return ( 
+        <button className={props.class}>{props.text}</button>
+     );
+}
+ 
 export default Btn;

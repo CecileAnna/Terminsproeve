@@ -1,3 +1,4 @@
+@import url("https://use.typekit.net/wfj6cre.css");
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +10,7 @@
 }
 
 html {
-  font-family: "Montserrat", sans-serif;
+  font-family: "poppins", sans-serif;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -41,6 +42,27 @@ table {
   border-spacing: 0;
 }
 
+.width-100-percent {
+  width: 100%;
+}
+
+.wrapper-center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-padding {
+  padding: 4rem;
+}
+
 .btn {
   background-color: #f1c40e;
+  font-family: "poppins", sans-serif;
+  color: #262626;
+  font-weight: 700;
+  padding: 1.4rem 2rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 1rem;
 }/*# sourceMappingURL=index.css.map */
