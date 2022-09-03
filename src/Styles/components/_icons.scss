@@ -1,0 +1,39 @@
+.star {
+  font-size: 1.5rem;
+  color: $black;
+  &--yellow {
+    color: $yellow;
+  }
+  &--grey {
+    color: $grey;
+  }
+}
+
+.bars {
+  font-size: 2rem;
+  color: $grey;
+  &--white {
+    color: $white;
+  }
+}
+
+.arrow {
+  font-size: 3rem;
+  color: $grey;
+  font-weight: 900;
+  &--white {
+    color: $white;
+  }
+}
+
+.search {
+    font-size: 1.3rem;
+    color: $grey;
+    font-weight: 900;
+  }
+
+.close {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: $grey;
+}
