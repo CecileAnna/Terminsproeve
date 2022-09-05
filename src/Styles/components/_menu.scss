@@ -1,0 +1,32 @@
+.menu--wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $white;
+}
+.menu--close-icon {
+    align-self: flex-end;
+}
+.menu--ul {
+  list-style: none;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  gap: 4rem;
+  align-items: center;
+  height: 100vh;
+  text-decoration: none;
+  margin-top: 7.5rem;
+}
+.menu--li {
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  text-decoration: none;
+}

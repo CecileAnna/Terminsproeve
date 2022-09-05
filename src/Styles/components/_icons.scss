@@ -1,10 +1,10 @@
 .star {
   font-size: 1.5rem;
   color: $black;
-  &--yellow {
+  &-yellow {
     color: $yellow;
   }
-  &--grey {
+  &-grey {
     color: $grey;
   }
 }
@@ -12,7 +12,7 @@
 .bars {
   font-size: 2rem;
   color: $grey;
-  &--white {
+  &-white {
     color: $white;
   }
 }
@@ -21,7 +21,7 @@
   font-size: 3rem;
   color: $grey;
   font-weight: 900;
-  &--white {
+  &-white {
     color: $white;
   }
 }

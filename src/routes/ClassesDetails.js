@@ -1,9 +1,11 @@
-
+import PageHeader from "../components/PageHeader";
 
 const ClassesDetails = () => {
   return (
     <>
-      <h1>Classes page</h1>
+      <PageHeader arrowColorWhite={true} barsColorWhite={true} />
+
+      <h1>Classes details page</h1>
     </>
   );
 };

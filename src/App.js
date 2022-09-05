@@ -7,18 +7,22 @@ import Login from "./routes/Login";
 import Schedule from "./routes/Schedule";
 import Search from "./routes/Search";
 
+import AllContextsProvider from "./contexts/AllContextsProvider";
+
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Routes>
-          <Route path="/" element={<Welcome />} />
-          <Route path="classes" element={<Classes />} />
-          <Route path="classes/:id" element={<ClassesDetails />} />
-          <Route path="login" element={<Login />} />
-          <Route path="schedule" element={<Schedule />} />
-          <Route path="search" element={<Search />} />
-        </Routes>
+        <AllContextsProvider>
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="classes" element={<Classes />} />
+            <Route path="classes/:id" element={<ClassesDetails />} />
+            <Route path="login" element={<Login />} />
+            <Route path="schedule" element={<Schedule />} />
+            <Route path="search" element={<Search />} />
+          </Routes>
+        </AllContextsProvider>
       </div>
     </BrowserRouter>
   );

@@ -1,9 +1,12 @@
+import PageHeader from "../components/PageHeader";
+
 const Search = () => {
-    return (
-      <>
-        <h1>Search page</h1>
-      </>
-    );
-  };
-  
-  export default Search;
+  return (
+    <>
+      <PageHeader text="Search" />
+      <h1>Search page</h1>
+    </>
+  );
+};
+
+export default Search;

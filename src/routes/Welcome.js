@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Btn from "../components/Btn";
 import SubHeading from "../subcomponents/texts/SubHeading";
-import Title from "../subcomponents/texts/Title";
+import Heading2 from "../subcomponents/texts/Heading2";
 
 const Welcome = () => {
   return (
@@ -24,7 +24,7 @@ const Welcome = () => {
 
         <div className="welcome--content-wrapper">
           <div className="welcome--titles-wrapper">
-            <Title text="Believe Yourself" />
+            <Heading2 text="Believe Yourself" />
             <SubHeading text="Train like a pro" />
           </div>
           <Link to="/Classes" className="welcome--btn">
