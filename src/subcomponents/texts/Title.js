@@ -1,7 +1,7 @@
 const Title = (props) => {
   return (
     <>
-      <h1>{props.text}</h1>
+      <h2 className={`title ${props.styles}`}>{props.text}</h2>
     </>
   );
 };

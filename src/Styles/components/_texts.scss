@@ -1,0 +1,25 @@
+.title {
+  color: $yellow;
+  font-size: 4rem;
+  font-weight: $font-weight-bold;
+  padding: 1rem 2rem;
+}
+
+//sub-heading
+.sub-heading {
+  display: flex;
+  flex-flow: row nowrap;
+  color: $white;
+  &--line {
+    font-weight: $font-weight-bold;
+    border-top: 0.25rem solid $white;
+    width: 1.5rem;
+    align-self: center;
+    margin-right: 0.6rem;
+  }
+  &--text {
+    font-weight: $font-weight-bold;
+    font-size: 1.3rem;
+    word-spacing: 0.1rem;
+  }
+}

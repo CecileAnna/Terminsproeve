@@ -1,17 +1,37 @@
+import { Link } from "react-router-dom";
 import Btn from "../components/Btn";
-import WrapperCenterContent from "../components/WrapperCenterContent";
-import ArrowLeftIcon from "../subcomponents/icons/ArrowLeftIcon";
-import BarsIcon from "../subcomponents/icons/BarsIcon";
-import CloseIcon from "../subcomponents/icons/CloseIcon";
-import SearchIcon from "../subcomponents/icons/SearchIcon";
-import StarIcon from "../subcomponents/icons/StarIcon";
+import SubHeading from "../subcomponents/texts/SubHeading";
+import Title from "../subcomponents/texts/Title";
 
 const Welcome = () => {
   return (
     <>
-      <WrapperCenterContent>
-        <Btn text="start training" styles="btn" />
-      </WrapperCenterContent>
+      <div role="banner" className="background-imgs">
+        <div className="welcome--img-wrapper">
+          <img
+            className="welcome--img"
+            src={process.env.PUBLIC_URL + "images/welcome-background.jpg"}
+            alt="training cover"
+          />
+        </div>
+        <div className="welcome--img-2-wrapper">
+          <img
+            className="welcome--img-2"
+            src={process.env.PUBLIC_URL + "images/welcome-center.jpg"}
+            alt="training cover"
+          />
+        </div>
+
+        <div className="welcome--content-wrapper">
+          <div className="welcome--titles-wrapper">
+            <Title text="Believe Yourself" />
+            <SubHeading text="Train like a pro" />
+          </div>
+          <Link to="/Classes" className="welcome--btn">
+            <Btn text="start training" styles="btn welcome--btn" />
+          </Link>
+        </div>
+      </div>
     </>
   );
 };

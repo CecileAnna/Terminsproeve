@@ -1,6 +1,6 @@
 const WrapperCenterContent = (props) => {
   return (
-    <div className="wrapper-center-content main-padding">{props.children}</div>
+    <div className="wrapper-center-content">{props.children}</div>
   );
 };
 

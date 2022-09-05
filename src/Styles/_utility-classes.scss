@@ -6,8 +6,31 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: column nowrap;
+  height: 100%;
 }
 
 .main-padding {
   padding: 4rem;
+}
+.top-padding-4rem {
+  padding-top: 4rem;
+}
+.top-padding-6rem {
+  padding-top: 4rem;
+}
+
+//color classes
+
+.white {
+  color: $white;
+}
+.black {
+  color: $black;
+}
+.yellow {
+  color: $yellow;
+}
+.grey {
+  color: $grey;
 }
