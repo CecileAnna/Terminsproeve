@@ -7,8 +7,27 @@
   border-radius: 50px;
   text-transform: uppercase;
   font-size: 1rem;
+  letter-spacing: 0.04rem;
+}
+.btn-long {
+  width: 100%;
+  padding: 1.4rem 0;
+  font-size: 1.17rem;
+  letter-spacing: 0.08rem;
+  font-weight: $font-weight-semi-bold;
 }
 
 .menu-btn {
   background-color: none;
+}
+
+.classes-details-btn {
+  background-color: none;
+  border: 0.25rem solid $yellow;
+  color: $yellow;
+  font-weight: $font-weight-semi-bold;
+  padding: 1.1rem 2.5rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
 }

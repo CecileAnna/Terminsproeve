@@ -28,7 +28,7 @@ const Welcome = () => {
             <SubHeading text="Train like a pro" />
           </div>
           <Link to="/Classes" className="welcome--btn">
-            <Btn text="start training" styles="btn welcome--btn" />
+            <Btn text="start training" styles="welcome--btn" />
           </Link>
         </div>
       </div>

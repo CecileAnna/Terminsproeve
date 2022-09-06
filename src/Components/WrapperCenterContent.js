@@ -1,6 +1,8 @@
 const WrapperCenterContent = (props) => {
   return (
-    <div className="wrapper-center-content">{props.children}</div>
+    <div className={`wrapper-center-content ${props.styles}`}>
+      {props.children}
+    </div>
   );
 };
 

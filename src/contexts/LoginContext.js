@@ -16,6 +16,7 @@ export function LoginProvider({ children }) {
   const handleToggleLogin = () => {
     setLogin(!login);
   };
+  
   return (
     <LoginContext.Provider value={login}>
       <LoginUpdateContext.Provider value={handleToggleLogin}>

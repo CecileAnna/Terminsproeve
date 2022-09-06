@@ -1,24 +1,51 @@
 import { Link } from "react-router-dom";
+import ClassesCards from "../components/ClassesCard";
 import PageHeader from "../components/PageHeader";
+import WrapperCenterContent from "../components/WrapperCenterContent";
 import Heading4 from "../subcomponents/texts/Heading4";
-import Heading5 from "../subcomponents/texts/Heading5";
-import Paragraf from "../subcomponents/texts/Paragraf";
 
 const Classes = () => {
+  const starColorsSmall = [
+    { classes: "star-smaller", id: 1 },
+    { classes: "star-smaller", id: 2 },
+    { classes: "star-smaller", id: 3 },
+    { classes: "star-smaller", id: 4 },
+    { classes: "star-smaller", id: 5 },
+  ];
   return (
     <>
       <PageHeader text="Popular classes" />
-      <h1>Classes page</h1>
-      <Link to="/Classes/test">
-        <h2>Classes Cards</h2>
-      </Link>
-      <Heading4 text="Popular trainers" />
-      <Heading5 text="Lower abs workout" styles="heading5-smaller" />
-      <Paragraf
-        text="We learn a few easy yoga positions f or a
-better posture and well being."
-      />
-      
+
+      <WrapperCenterContent>
+        <Link to="/Classes/test" style={{ textDecoration: "none" }}>
+          <ClassesCards
+            cornerBoxText="Lower abs workout"
+            starsColorsArray={starColorsSmall}
+          />
+        </Link>
+
+        <div className="classes--bottom-wrapper">
+          <Heading4 text="Classes for you" />
+
+          <div className="classes--small-cards-container">
+            <ClassesCards
+              cornerBoxText="Lower abs workout"
+              starsColorsArray={starColorsSmall}
+              smallCardTrue={true}
+            />
+            <ClassesCards
+              cornerBoxText="Lower abs workout"
+              starsColorsArray={starColorsSmall}
+              smallCardTrue={true}
+            />
+            <ClassesCards
+              cornerBoxText="Lower abs workout"
+              starsColorsArray={starColorsSmall}
+              smallCardTrue={true}
+            />
+          </div>
+        </div>
+      </WrapperCenterContent>
     </>
   );
 };

@@ -58,10 +58,13 @@ table {
 
 .wrapper-center-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: left;
   flex-flow: column nowrap;
-  height: 100%;
+  height: 88vh;
+  width: 100%;
+  padding: 1.5rem;
+  gap: 2rem;
 }
 
 .main-padding {
@@ -74,6 +77,10 @@ table {
 
 .top-padding-6rem {
   padding-top: 4rem;
+}
+
+.position-sticky {
+  position: sticky;
 }
 
 .white-color-important {
@@ -101,14 +108,34 @@ table {
   border-radius: 50px;
   text-transform: uppercase;
   font-size: 1rem;
+  letter-spacing: 0.04rem;
+}
+
+.btn-long {
+  width: 100%;
+  padding: 1.4rem 0;
+  font-size: 1.17rem;
+  letter-spacing: 0.08rem;
+  font-weight: 600;
 }
 
 .menu-btn {
   background-color: none;
 }
 
+.classes-details-btn {
+  background-color: none;
+  border: 0.25rem solid #f1c40e;
+  color: #f1c40e;
+  font-weight: 600;
+  padding: 1.1rem 2.5rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
 .star {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #262626;
 }
 .star-yellow {
@@ -116,6 +143,21 @@ table {
 }
 .star-grey {
   color: #9e9e9e;
+}
+.star-white {
+  color: #ffffff;
+}
+.star-smaller {
+  font-size: 1.15rem;
+}
+
+.stars--wrapper {
+  display: flex;
+  justify-content: left;
+  gap: 0.4rem;
+}
+.stars--wrapper-small {
+  gap: 0.2rem;
 }
 
 .bars {
@@ -156,13 +198,13 @@ table {
 
 .heading3 {
   color: #262626;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 400;
 }
 
 .heading4 {
   color: #262626;
-  font-size: 1.65rem;
+  font-size: 1.6rem;
   font-weight: 700;
 }
 
@@ -242,7 +284,7 @@ table {
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 .page-header--wrapper-title-arrow {
   display: flex;
@@ -250,6 +292,43 @@ table {
   justify-content: left;
   align-items: center;
   gap: 0.4rem;
+}
+
+.classes-card {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 50vh;
+  border-radius: 30px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #262626;
+}
+
+.classes-card-small {
+  border-radius: 30px 30px 0 30px;
+  cursor: pointer;
+  width: 40vw;
+  height: 21vh;
+}
+
+.classes-card--corner-box {
+  padding: 1.5rem 3rem 1.5rem 1.5rem;
+  border-radius: 0 70px 0 30px;
+  background-color: #f1c40e;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: left;
+  gap: 0.4rem;
+}
+
+.classes-card--corner-box-small {
+  padding: 0.55rem 1rem 0.55rem 1.3rem;
+  gap: 0.2rem;
+  border-radius: 0 50px 0 30px;
+  overflow: hidden;
 }
 
 .background-imgs {
@@ -313,4 +392,23 @@ table {
 
 .welcome--btn {
   z-index: 10;
+}
+
+.classes--bottom-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5rem;
+}
+
+.classes--small-cards-container {
+  display: flex;
+  flex-direction: row nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+  position: relative;
+  width: fit-content;
+  height: 100%;
+}
+.classes--small-cards-container::-webkit-scrollbar {
+  display: none;
 }/*# sourceMappingURL=index.css.map */

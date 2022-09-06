@@ -13,9 +13,11 @@
 @import "./components/texts";
 @import "./components/menu";
 @import "./components/page-header";
+@import "./components/classes-cards";
 
 // routes (welcome, classes, login etc)
 @import "./routes/welcome";
+@import "./routes/classes";
 
 // utilities (margin, padding, opacity, etc)
 
