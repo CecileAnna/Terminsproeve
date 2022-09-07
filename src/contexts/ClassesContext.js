@@ -1,5 +1,4 @@
 // import { createContext, useState, useContext, useEffect } from "react";
-// import { FetchProvider, useFetch, useFetchData } from "./FetchContext";
 
 // const ClassesContext = createContext();
 // const ClassesUpdateContext = createContext();
@@ -12,27 +11,31 @@
 // }
 
 // export function ClassesProvider({ children }) {
-//   const [classes, setClasses] = useState([]);
+//   const [classesData, setClassesData] = useState([]);
 
 //   useEffect(() => {
-//     const url = "http://localhost:4000/api/v1/classes";
-//     const classesData = useFetchData(url);
-//     return classesData;
+//     fetchClasses();
+
+//     const fetchClasses = async () => {
+//       const fetchData = await fetch("http://localhost:4000/api/v1/classes", {
+//         method: "GET",
+//       });
+
+//       const data = await fetchData.json();
+
+//       setClassesData(data);
+//     };
 //   }, []);
 
 //   const handleClasses = () => {
-//     setClasses({
-//       classes: classesData,
-//     });
+//     setClassesData(classesData);
 //   };
 
 //   return (
-//     <FetchProvider>
-//       <ClassesContext.Provider value={classes}>
-//         <ClassesUpdateContext.Provider value={handleClasses}>
-//           {children}
-//         </ClassesUpdateContext.Provider>
-//       </ClassesContext.Provider>
-//     </FetchProvider>
+//     <ClassesContext.Provider value={classesData}>
+//       <ClassesUpdateContext.Provider value={handleClasses}>
+//         {children}
+//       </ClassesUpdateContext.Provider>
+//     </ClassesContext.Provider>
 //   );
 // }
