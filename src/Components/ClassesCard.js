@@ -9,6 +9,7 @@ const ClassesCards = (props) => {
           props.smallCardTrue ? "classes-card-small" : " "
         }`}
         style={{ backgroundImage: `url(${props.bgUrl})` }}
+       
       >
         <div
           className={`classes-card--corner-box

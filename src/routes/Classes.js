@@ -32,33 +32,43 @@ const Classes = () => {
 
   return (
     <>
-      {console.log(classesData[0].asset.url)}
-      <PageHeader text="Popular classes" />
+    {console.log()}
+      {classesData[0] && (
+        <>
+          <PageHeader text="Popular classes" />
 
-      <WrapperCenterContent>
-        <Link to="/Classes/test" style={{ textDecoration: "none" }}>
-          <ClassesCards
-            cornerBoxText={`${classesData[3].className}`}
-            starsColorsArray={starColorsSmall}
-            bgUrl={`${classesData[3].asset.url}`}
-          />
-        </Link>
-
-        <div className="classes--bottom-wrapper">
-          <Heading4 text="Classes for you" />
-
-          <div className="classes--small-cards-container">
-            {classesData.map((classData) => (
+          <WrapperCenterContent>
+            <Link to={`/Classes/${classesData[3].id}`} style={{ textDecoration: "none" }}>
               <ClassesCards
-                cornerBoxText={`${classData.className}`}
+                cornerBoxText={`${classesData[3].className}`}
                 starsColorsArray={starColorsSmall}
-                smallCardTrue={true}
-                bgUrl={`${classData.asset.url}`}
+                bgUrl={`${classesData[3].asset.url}`}
               />
-            ))}
-          </div>
-        </div>
-      </WrapperCenterContent>
+            </Link>
+
+            <div className="classes--bottom-wrapper">
+              <Heading4 text="Classes for you" />
+
+              <div className="classes--small-cards-container">
+                {classesData.map((classData) => (
+                  <Link
+                    to={`/Classes/${classData.id}`}
+                    style={{ textDecoration: "none" }}
+                    key={classData.id}
+                  >
+                    <ClassesCards
+                      cornerBoxText={`${classData.className}`}
+                      starsColorsArray={starColorsSmall}
+                      smallCardTrue={true}
+                      bgUrl={`${classData.asset.url}`}
+                    />
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </WrapperCenterContent>
+        </>
+      )}
     </>
   );
 };
