@@ -18,7 +18,6 @@ const Classes = () => {
     });
 
     const data = await fetchData.json();
-    // console.log(data);
 
     setClassesData(data);
   };
