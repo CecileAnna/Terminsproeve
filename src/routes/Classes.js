@@ -30,18 +30,29 @@ const Classes = () => {
     { classes: "star-smaller", id: 5 },
   ];
 
+  const starColors = [
+    { classes: " ", id: 1 },
+    { classes: " ", id: 2 },
+    { classes: " ", id: 3 },
+    { classes: " ", id: 4 },
+    { classes: " ", id: 5 },
+  ];
+
   return (
     <>
-    {console.log()}
+      {console.log()}
       {classesData[0] && (
         <>
           <PageHeader text="Popular classes" />
 
           <WrapperCenterContent>
-            <Link to={`/Classes/${classesData[3].id}`} style={{ textDecoration: "none" }}>
+            <Link
+              to={`/Classes/${classesData[3].id}`}
+              style={{ textDecoration: "none" }}
+            >
               <ClassesCards
                 cornerBoxText={`${classesData[3].className}`}
-                starsColorsArray={starColorsSmall}
+                starsColorsArray={starColors}
                 bgUrl={`${classesData[3].asset.url}`}
               />
             </Link>
