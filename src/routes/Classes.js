@@ -38,22 +38,23 @@ const Classes = () => {
     { classes: " ", id: 5 },
   ];
 
+  let randomIndex = Math.floor(Math.random() * classesData.length);
+
   return (
     <>
-      {console.log()}
       {classesData[0] && (
         <>
           <PageHeader text="Popular classes" />
 
           <WrapperCenterContent>
             <Link
-              to={`/Classes/${classesData[3].id}`}
+              to={`/Classes/${classesData[randomIndex].id}`}
               style={{ textDecoration: "none" }}
             >
               <ClassesCards
-                cornerBoxText={`${classesData[3].className}`}
+                cornerBoxText={`${classesData[randomIndex].className}`}
                 starsColorsArray={starColors}
-                bgUrl={`${classesData[3].asset.url}`}
+                bgUrl={`${classesData[randomIndex].asset.url}`}
               />
             </Link>
 

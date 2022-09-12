@@ -1,16 +1,12 @@
 import { Link } from "react-router-dom";
 import CloseIcon from "../subcomponents/icons/CloseIcon";
 import Heading3 from "../subcomponents/texts/Heading3";
-import { useLogin } from "../contexts/LoginContext";
+import { useLogin, useLoginUpdate } from "../contexts/LoginContext";
 
 const Menu = () => {
   let login = useLogin();
-  let loginText = "";
-  if (login === true) {
-    loginText = "Log Out";
-  } else {
-    loginText = "Log In";
-  }
+  let updateLogin = useLoginUpdate();
+
   return (
     <>
       <div className="menu--wrapper">
@@ -27,16 +23,27 @@ const Menu = () => {
                 <Heading3 text="Search" />
               </li>
             </Link>
-            <Link to="/Schedule" style={{ textDecoration: "none" }}>
-              <li className="menu--li">
-                <Heading3 text="My Schedule" />
+
+            {login && (
+              <Link to="/Schedule" style={{ textDecoration: "none" }}>
+                <li className="menu--li">
+                  <Heading3 text="My Schedule" />
+                </li>
+              </Link>
+            )}
+            {login && (
+              <li className="menu--li" onClick={updateLogin}>
+                <Heading3 text="Log Out" />
               </li>
-            </Link>
-            <Link to="/Login" style={{ textDecoration: "none" }}>
-              <li className="menu--li">
-                <Heading3 text={loginText} />
-              </li>
-            </Link>
+            )}
+
+            {!login && (
+              <Link to="/Login" style={{ textDecoration: "none" }}>
+                <li className="menu--li">
+                  <Heading3 text="Log In" />
+                </li>
+              </Link>
+            )}
           </ul>
         </nav>
       </div>
