@@ -4,7 +4,7 @@ const FiveStars = (props) => {
   return (
     <>
       <div
-        className={`stars--wrapper ${
+        className={`stars--wrapper ${props.styles} ${
           props.smallCardTrue ? "stars--wrapper-small" : " "
         }`}
         style={{ backgroundImage: `url(${props.bgUrl})` }}

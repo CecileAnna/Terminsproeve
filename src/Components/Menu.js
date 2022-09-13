@@ -5,8 +5,8 @@ import { useLogin, useLoginUpdate } from "../contexts/LoginContext";
 import { useMenuUpdate  } from "../contexts/MenuContext";
 
 const Menu = () => {
-  let login = useLogin();
-  let updateLogin = useLoginUpdate();
+  const login = useLogin();
+  const updateLogin = useLoginUpdate();
 
   const menuUpdate = useMenuUpdate();
 

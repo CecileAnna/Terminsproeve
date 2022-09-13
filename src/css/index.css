@@ -436,7 +436,7 @@ Link {
 
 .class-details--hero-top {
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   position: absolute;
   top: 0;
   left: 0;
@@ -446,12 +446,15 @@ Link {
   background-repeat: no-repeat;
   display: flex;
   flex-flow: row wrap;
-  z-index: 0;
+  z-index: -1;
+  padding: 17rem 0 0 0;
 }
 
 .class-details--title {
-  position: relative;
-  top: 30vh;
-  font-size: 3.2rem;
+  font-size: 2.8rem;
   width: 100%;
+}
+
+.class-details--stars {
+  margin: -1rem 0 0 2rem;
 }/*# sourceMappingURL=index.css.map */
