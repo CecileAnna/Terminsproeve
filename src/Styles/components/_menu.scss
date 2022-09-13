@@ -1,8 +1,8 @@
-.menu--wrapper {
+.menu {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  z-index: 100;
+  z-index: 10;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -11,7 +11,7 @@
   background-color: $white;
 }
 .menu--close-icon {
-    align-self: flex-end;
+  align-self: flex-end;
 }
 .menu--ul {
   list-style: none;

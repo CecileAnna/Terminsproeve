@@ -9,8 +9,8 @@ const FiveStars = (props) => {
         }`}
         style={{ backgroundImage: `url(${props.bgUrl})` }}
       >
-        {props.starsColorsArray.map((starColor) => (
-          <StarIcon styles={`${starColor.classes}`} key={starColor.id} />
+        {props.starsColorsArray.map((starColor, index) => (
+          <StarIcon styles={`${starColor.classes}`} key={index} />
         ))}
       </div>
     </>

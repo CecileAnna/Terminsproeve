@@ -262,11 +262,11 @@ Link {
   font-weight: 500;
 }
 
-.menu--wrapper {
+.menu {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  z-index: 100;
+  z-index: 10;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -304,6 +304,7 @@ Link {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
+  z-index: 99;
 }
 .page-header--wrapper-title-arrow {
   display: flex;
@@ -431,4 +432,26 @@ Link {
 }
 .classes--small-cards-container::-webkit-scrollbar {
   display: none;
+}
+
+.class-details--hero-top {
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: top left;
+  background-color: hotpink;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-flow: row wrap;
+  z-index: 0;
+}
+
+.class-details--title {
+  position: relative;
+  top: 30vh;
+  font-size: 3.2rem;
+  width: 100%;
 }/*# sourceMappingURL=index.css.map */

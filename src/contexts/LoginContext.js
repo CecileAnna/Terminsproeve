@@ -16,9 +16,7 @@ export function LoginProvider({ children }) {
   const toggleLogin = (data) => {
     let token = data.token;
     setLogin(!login);
-    // if (token) {
-    //   setLogin(!login);
-    // }
+    // token ? setLogin(true) : setLogin(false);
   };
 
   useEffect(() => {
