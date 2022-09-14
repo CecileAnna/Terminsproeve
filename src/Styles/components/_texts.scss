@@ -32,15 +32,17 @@
   flex-flow: row nowrap;
   color: $white;
   &--line {
-    font-weight: $font-weight-bold;
     border-top: 0.25rem solid $white;
     width: 1.5rem;
     align-self: center;
     margin-right: 0.6rem;
+    &-black {
+      border-top: 0.25rem solid $black; 
+    }
   }
   &--text {
     font-weight: $font-weight-bold;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     word-spacing: 0.1rem;
   }
 }
@@ -48,6 +50,6 @@
 .paragraf {
   color: $black;
   font-size: 1.3rem;
-  line-height: 1.75rem;
+  line-height: 1.55rem;
   font-weight: $font-weight-medium;
 }

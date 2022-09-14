@@ -14,11 +14,13 @@
 @import "./components/menu";
 @import "./components/page-header";
 @import "./components/classes-cards";
+@import "./components/trainer-card";
 
 // routes (welcome, classes, login etc)
 @import "./routes/welcome";
 @import "./routes/classes";
 @import "./routes/classes-details";
+@import "./routes/login";
 
 // utilities (margin, padding, opacity, etc)
 

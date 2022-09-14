@@ -1,0 +1,22 @@
+.trainer-card {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
+  align-content: center;
+  margin: 1.5rem 0 0 0;
+  gap: 1.6rem;
+}
+
+.trainer-card--img {
+  border-radius: 20px;
+  width: 6.5rem;
+  height: 6.5rem;
+  object-fit: cover;
+}
+.trainer-card--name {
+  align-self: flex-start;
+  font-weight: $font-weight-bold;
+  margin: 1.5rem 0 0 0;
+}

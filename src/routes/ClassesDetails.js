@@ -4,7 +4,11 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Heading2 from "../subcomponents/texts/Heading2";
 import FiveStars from "../components/FiveStars";
-import Heading3 from "../subcomponents/texts/Heading3";
+import Heading5 from "../subcomponents/texts/Heading5";
+import Paragraf from "../subcomponents/texts/Paragraf";
+import Btn from "../components/Btn";
+import Heading4 from "../subcomponents/texts/Heading4";
+import TrainerCard from "../components/TrainerCard";
 
 const ClassesDetails = () => {
   let { id } = useParams();
@@ -24,23 +28,20 @@ const ClassesDetails = () => {
 
   // console.log(classData);
 
-  // const [classRatingData, setClassRatingData] = useState([]);
+  const [classRatingData, setClassRatingData] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:4000/api/v1/classes/${id}/ratings`, {
-  //     method: "GET",
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setClassRatingData(data);
-  //     })
-  //     .catch((err) => console.error(err));
-  // }, []);
+  useEffect(() => {
+    fetch(`http://localhost:4000/api/v1/classes/${id}/ratings`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setClassRatingData(data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
-  // console.log(classRatingData ? classRatingData : "no good");
-
-  // let rating = classRatingData[0].rating && classRatingData[0].rating;
+  const rating = classRatingData[0]?.rating && classRatingData[0].rating;
 
   // let testArrayRating = new Array(rating);
 
@@ -54,32 +55,82 @@ const ClassesDetails = () => {
     { classes: "star-yellow" },
   ];
 
+  const [trainerData, setTrainerData] = useState({});
+  const trainerId = classData?.trainer?.id && classData.trainer.id;
+
+  useEffect(() => {
+    if (trainerId) {
+      fetch(`http://localhost:4000/api/v1/trainers/${trainerId}`, {
+        method: "GET",
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          setTrainerData(data);
+        })
+        .catch((err) => console.error(err));
+    }
+  }, []);
+
+  const trainerUrl = trainerData?.asset?.url && trainerData.asset.url;
+
+  // console.log(trainerUrl && trainerUrl);
+
   return (
     <>
       {classData && (
-          <>
-            <PageHeader arrowColorWhite={true} barsColorWhite={true} />
+        <>
+          <PageHeader arrowColorWhite={true} barsColorWhite={true} />
 
-            <WrapperCenterContent>
-              <div
-                className="class-details--hero-top"
-                style={{
-                  backgroundImage: `url(${classData.asset.url})`,
-                }}
-              >
-                <Heading2
-                  text={`${classData.className}`}
-                  styles="class-details--title"
+          <WrapperCenterContent>
+            <div
+              className="class-details--hero-top"
+              style={{
+                backgroundImage: `url(${classData.asset.url})`,
+              }}
+            >
+              <Heading2
+                text={`${classData.className}`}
+                styles="class-details--title"
+              />
+              {classRatingData && (
+                <>
+                  <FiveStars
+                    starsColorsArray={starColors}
+                    styles="class-details--stars"
+                  />
+                  <Heading5
+                    text={`${classRatingData[0]?.rating && rating}/5`}
+                    styles="yellow-color-important class-details--rating-text"
+                  />
+                </>
+              )}
+              <Btn text="Rate" styles="class-details--btn" />
+            </div>
+            <div className="class-details--description-wrapper">
+              <Heading5
+                text={`${classData.classDay} - ${classData.classTime}`}
+              />
+              <Paragraf
+                text={classData.classDescription}
+                styles="class-details--description"
+              />
+              <Heading4 text="Trainer" styles="class-details--trainer-title" />
+              {trainerData && (
+                <TrainerCard
+                  url={
+                    trainerData?.asset?.url ? trainerUrl : classData.asset.url
+                  }
+                  trainerName={classData.trainer.trainerName}
                 />
-                <FiveStars
-                  starsColorsArray={starColors}
-                  styles="class-details--stars"
-                />
-                {/* <Heading3 text={`${rating && rating}/5`} styles="yellow-color-important" /> */}
-              </div>
-            </WrapperCenterContent>
-          </>
-        )}
+              )}
+              <Btn
+                text="sing up"
+                styles="btn-long class-details--sign-up-btn"
+              />
+            </div>
+          </WrapperCenterContent>
+        </>
+      )}
     </>
   );
 };

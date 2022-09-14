@@ -11,7 +11,7 @@ export function useLoginUpdate() {
 }
 
 export function LoginProvider({ children }) {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(undefined);
 
   const toggleLogin = (data) => {
     let token = data.token;
