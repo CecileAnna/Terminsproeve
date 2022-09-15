@@ -3,8 +3,9 @@ import WrapperCenterContent from "../components/WrapperCenterContent";
 import Heading2 from "../subcomponents/texts/Heading2";
 import Heading5 from "../subcomponents/texts/Heading5";
 import SubHeading from "../subcomponents/texts/SubHeading";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useLoginUpdate } from "../contexts/LoginContext";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [userData, setUserData] = useState({
@@ -22,30 +23,31 @@ const Login = () => {
     });
   }
 
-  const updateLogin = useLoginUpdate();
+  const loginUpdate = useLoginUpdate();
+  let navigate = useNavigate();
 
-  function authLogin(userData) {
-
-      fetch("http://localhost:4000/auth/token", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: `username=${userData.userMail}&password=${userData.userPassword}`,
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          updateLogin(data);
-        })
-        .catch((err) => console.error(err));
-   
-
-  }
-
-  function useHandleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
-    // console.log(userData);
-    useEffect(() => { authLogin(userData)}, [userData])
+    console.log(userData);
+    fetch("http://localhost:4000/auth/token", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `username=${userData.userMail}&password=${userData.userPassword}`,
+    })
+      .then((response) => {
+      if(response.ok) {
+        return response.json()
+      } else {
+        throw new Error("unauthorized")
+      }})
+      .then((data) => {
+        loginUpdate(data);
+        
+        navigate("/Classes");
+      })
+      .catch((err) => console.error(err));
    
   }
 
@@ -59,7 +61,7 @@ const Login = () => {
           lineStyles="sub-heading--line-black"
         />
 
-        <form className="login--form" onSubmit={useHandleSubmit}>
+        <form className="login--form" onSubmit={handleSubmit}>
           <Heading5
             text="Log in with your credentials"
             styles="login--form-heading"

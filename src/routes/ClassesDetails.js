@@ -58,8 +58,8 @@ const ClassesDetails = () => {
   const [trainerData, setTrainerData] = useState({});
   const trainerId = classData?.trainer?.id && classData.trainer.id;
 
-  useEffect(() => {
-    if (trainerId) {
+    useEffect(() => {
+      if (trainerId) {
       fetch(`http://localhost:4000/api/v1/trainers/${trainerId}`, {
         method: "GET",
       })
@@ -69,8 +69,8 @@ const ClassesDetails = () => {
         })
         .catch((err) => console.error(err));
     }
-  }, []);
-
+  }, [trainerId]);
+  
   const trainerUrl = trainerData?.asset?.url && trainerData.asset.url;
 
   // console.log(trainerUrl && trainerUrl);
