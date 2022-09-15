@@ -5,7 +5,11 @@ import { useLogin, useLoginUpdate } from "../contexts/LoginContext";
 import { useMenuUpdate  } from "../contexts/MenuContext";
 
 const Menu = () => {
-  const login = useLogin();
+  const login = useLogin().login;
+  // const userAuthData = useLogin().userAuthData;
+  // console.log(login);
+  // console.log(userAuthData);
+
   const updateLogin = useLoginUpdate();
 
   const menuUpdate = useMenuUpdate();

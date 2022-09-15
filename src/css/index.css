@@ -383,6 +383,22 @@ Link {
   margin: 1.5rem 0 0 0;
 }
 
+.schedule--card {
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 20px;
+  background-color: #fbfbfb;
+  border: solid 0.15rem #d4d4d4;
+  width: 100%;
+  justify-content: space-between;
+  padding: 2rem 1rem 1rem 1.5rem;
+  height: 15vh;
+}
+
+.schedule--title {
+  font-weight: 600;
+}
+
 .background-imgs {
   background: url(../../public/images/welcome-background.jpg) left top no-repeat, url(../../public/images/welcome-center.jpg) left bottom no-repeat;
   height: 100vh;
