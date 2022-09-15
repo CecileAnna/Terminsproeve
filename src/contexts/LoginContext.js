@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useState, useContext} from "react";
 
 const LoginContext = createContext();
 const LoginUpdateContext = createContext();
@@ -13,30 +13,18 @@ export function useLoginUpdate() {
 export function LoginProvider({ children }) {
   const [login, setLogin] = useState(undefined);
 
-  const toggleLogin = (data) => {
-    let token = data.token;
-    setLogin(!login);
-    // token ? setLogin(true) : setLogin(false);
+  const toggleLogin = (tokenData) => {
+    let token = tokenData.token;
+    // setLogin(!login);
+    token ? setLogin(true) : setLogin(false);
   };
 
-  useEffect(() => {
-    fetch("http://localhost:4000/auth/token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: "username=user1&password=1234",
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        toggleLogin(data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
+
+  
 
   return (
     <LoginContext.Provider value={login}>
-      <LoginUpdateContext.Provider value={toggleLogin}>
+      <LoginUpdateContext.Provider value={{ toggleLogin}}>
         {children}
       </LoginUpdateContext.Provider>
     </LoginContext.Provider>

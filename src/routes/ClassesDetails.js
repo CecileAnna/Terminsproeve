@@ -124,7 +124,7 @@ const ClassesDetails = () => {
                 />
               )}
               <Btn
-                text="sing up"
+                text="sign up"
                 styles="btn-long class-details--sign-up-btn"
               />
             </div>
