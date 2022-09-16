@@ -21,14 +21,17 @@ const Schedule = () => {
         },
       })
         .then((response) => {
-            if(response.ok) {
-              return response.json()
-            } else {
-              throw new Error("unauthorized")
-            }})
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("unauthorized");
+          }
+        })
         .then((data) => {
-          setScheduleData(data);
-          console.log(scheduleData);
+          {
+            data && setScheduleData(data);
+          }
+          console.log(scheduleData && scheduleData);
         })
         .catch((err) => console.error(err));
     }
@@ -36,9 +39,18 @@ const Schedule = () => {
 
   return (
     <>
-      <PageHeader text="My Schedule" />
-      <h1>testing schedule card</h1>
-      <ScheduleCard textTitle="Yoga Flow Workout" textTime={`Monday - 19.30`} />
+      {scheduleData && (
+        <>
+          <PageHeader text="My Schedule" />
+          {scheduleData.classes.map((schedule, index) => (
+            <ScheduleCard
+              textTitle={schedule.className}
+              textTime={`${schedule.classDay} - ${schedule.classTime}`}
+              key={index}
+            />
+          ))}
+        </>
+      )}
     </>
   );
 };

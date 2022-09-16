@@ -44,7 +44,6 @@ const Login = () => {
       }})
       .then((data) => {
         loginUpdate(data);
-        
         navigate("/Classes");
       })
       .catch((err) => console.error(err));

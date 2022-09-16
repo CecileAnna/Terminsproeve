@@ -14,30 +14,28 @@ export function useLoginUpdate() {
 export function LoginProvider({ children }) {
   const [login, setLogin] = useState(undefined);
   const [userAuthData, setUserAuthData] = useState({
-    token: "",
-    userId: ""
+    token: ``,
+    userId: ``,
   });
 
   const toggleLogin = (data) => {
     let token = data.token;
+    console.log(token);
     token ? setLogin(true) : setLogin(false);
-    {
-      token &&
-        setUserAuthData((prevData) => {
-          return {
-            ...prevData,
-            token: data.token,
-            userId: data.userId
-          };
-        });
-        
-    }
+
+    setUserAuthData((prevData) => {
+      return {
+        ...prevData,
+        token: data.token,
+        userId: data.userId,
+      };
+    });
   };
 
   console.log(userAuthData);
 
   return (
-    <LoginContext.Provider value={{login, userAuthData}}>
+    <LoginContext.Provider value={{ login, userAuthData }}>
       <LoginUpdateContext.Provider value={toggleLogin}>
         {children}
       </LoginUpdateContext.Provider>
