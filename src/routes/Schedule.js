@@ -7,8 +7,6 @@ const Schedule = () => {
   const userAuthData = useLogin().userAuthData;
   const token = userAuthData.token;
   const userId = userAuthData.userId;
-  // console.log(userId && userId);
-  // console.log(token && token);
 
   const [scheduleData, setScheduleData] = useState();
 
@@ -31,11 +29,10 @@ const Schedule = () => {
           {
             data && setScheduleData(data);
           }
-          console.log(scheduleData && scheduleData);
         })
         .catch((err) => console.error(err));
     }
-  }, []);
+  }, [userId]);
 
   return (
     <>

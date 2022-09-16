@@ -18,9 +18,27 @@ const Search = () => {
     setSearchData((prevData) => {
       return {
         ...prevData,
-        [name]: value,
+        [name]: value
       };
     });
+
+    function filterSearchText(){
+      
+      let filteredData = classesData.filter((el) => {
+        //if no input the return the original
+        if (searchData.searchText === '') {
+            return el;
+        }
+        //return the item which contains the user input
+        else {
+            return el.text.toLowerCase().includes(searchData.searchText)
+        }
+
+    })
+
+    return filteredData;
+      
+    }
   }
 
   useEffect(() => {
