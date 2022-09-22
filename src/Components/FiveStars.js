@@ -4,13 +4,13 @@ const FiveStars = (props) => {
   return (
     <>
       <div
-        className={`stars--wrapper ${
+        className={`stars--wrapper ${props.styles} ${
           props.smallCardTrue ? "stars--wrapper-small" : " "
         }`}
         style={{ backgroundImage: `url(${props.bgUrl})` }}
       >
-        {props.starsColorsArray.map((starColor) => (
-          <StarIcon styles={`${starColor.classes}`} key={starColor.id} />
+        {props.starsColorsArray.map((starColor, index) => (
+          <StarIcon styles={`${starColor.classes}`} key={index} />
         ))}
       </div>
     </>

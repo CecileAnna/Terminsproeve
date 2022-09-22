@@ -6,20 +6,37 @@ const LoginUpdateContext = createContext();
 export function useLogin() {
   return useContext(LoginContext);
 }
+
 export function useLoginUpdate() {
   return useContext(LoginUpdateContext);
 }
 
 export function LoginProvider({ children }) {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(undefined);
+  const [userAuthData, setUserAuthData] = useState({
+    token: ``,
+    userId: ``,
+  });
 
-  const handleToggleLogin = () => {
-    setLogin(!login);
+  const toggleLogin = (data) => {
+    let token = data.token;
+    console.log(token);
+    token ? setLogin(true) : setLogin(false);
+
+    setUserAuthData((prevData) => {
+      return {
+        ...prevData,
+        token: data.token,
+        userId: data.userId,
+      };
+    });
   };
-  
+
+  console.log(userAuthData);
+
   return (
-    <LoginContext.Provider value={login}>
-      <LoginUpdateContext.Provider value={handleToggleLogin}>
+    <LoginContext.Provider value={{ login, userAuthData }}>
+      <LoginUpdateContext.Provider value={toggleLogin}>
         {children}
       </LoginUpdateContext.Provider>
     </LoginContext.Provider>

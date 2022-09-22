@@ -118,6 +118,22 @@ Link {
   color: #9e9e9e !important;
 }
 
+.font-weight-regular {
+  font-weight: 400;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.font-weight-semi-bold {
+  font-weight: 600;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
 .btn {
   background-color: #f1c40e;
   font-family: "poppins", sans-serif;
@@ -128,6 +144,7 @@ Link {
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: 0.04rem;
+  cursor: pointer;
 }
 
 .btn-long {
@@ -140,17 +157,6 @@ Link {
 
 .menu-btn {
   background-color: none;
-}
-
-.classes-details-btn {
-  background-color: none;
-  border: 0.25rem solid #f1c40e;
-  color: #f1c40e;
-  font-weight: 600;
-  padding: 1.1rem 2.5rem;
-  border-radius: 50px;
-  text-transform: uppercase;
-  font-size: 1.4rem;
 }
 
 .star {
@@ -243,31 +249,33 @@ Link {
   color: #ffffff;
 }
 .sub-heading--line {
-  font-weight: 700;
   border-top: 0.25rem solid #ffffff;
   width: 1.5rem;
   align-self: center;
   margin-right: 0.6rem;
 }
+.sub-heading--line-black {
+  border-top: 0.25rem solid #262626;
+}
 .sub-heading--text {
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   word-spacing: 0.1rem;
 }
 
 .paragraf {
   color: #262626;
   font-size: 1.3rem;
-  line-height: 1.75rem;
+  line-height: 1.55rem;
   font-weight: 500;
 }
 
-.menu--wrapper {
+.menu {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  z-index: 100;
-  width: 100vw;
+  z-index: 10;
+  width: 101vw;
   height: 100vh;
   position: absolute;
   top: 0;
@@ -304,6 +312,7 @@ Link {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
+  z-index: 99;
 }
 .page-header--wrapper-title-arrow {
   display: flex;
@@ -348,6 +357,46 @@ Link {
   padding: 0.55rem 1rem 0.55rem 1.3rem;
   gap: 0.2rem;
   border-radius: 0 50px 0 30px;
+}
+
+.trainer-card {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: left;
+  align-content: center;
+  margin: 1.5rem 0 0 0;
+  gap: 1.6rem;
+}
+
+.trainer-card--img {
+  border-radius: 20px;
+  width: 6.5rem;
+  height: 6.5rem;
+  object-fit: cover;
+}
+
+.trainer-card--name {
+  align-self: flex-start;
+  font-weight: 700;
+  margin: 1.5rem 0 0 0;
+}
+
+.schedule--card {
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 20px;
+  background-color: #fbfbfb;
+  border: solid 0.15rem #d4d4d4;
+  width: 100%;
+  justify-content: space-between;
+  padding: 2rem 1rem 1rem 1.5rem;
+  height: 15vh;
+}
+
+.schedule--title {
+  font-weight: 600;
 }
 
 .background-imgs {
@@ -430,5 +479,178 @@ Link {
   height: 100%;
 }
 .classes--small-cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.class-details--hero-top {
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: top left;
+  background-color: hotpink;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-flow: row wrap;
+  z-index: -1;
+  padding: 8rem 0 0 0;
+  justify-content: left;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.class-details--title {
+  font-size: 2.8rem;
+  width: 100%;
+  top: 3rem;
+  position: relative;
+}
+
+.class-details--stars {
+  margin: -1rem 0 0 2rem;
+}
+
+.class-details--rating-text {
+  margin: -0.6rem 0 0 0;
+  font-weight: 700;
+  align-self: center;
+}
+
+.class-details--btn {
+  background-color: transparent;
+  border: 0.23rem solid #f1c40e;
+  color: #f1c40e;
+  font-weight: 700;
+  padding: 1.15rem 2rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin: 0 0 0 3.5rem;
+}
+
+.class-details--description-wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  height: 100%;
+  margin: 39vh 0 0 0;
+}
+
+.class-details--description {
+  margin: 1.5rem 0 0 0;
+}
+
+.class-details--trainer-title {
+  margin: 3rem 0 0 0;
+}
+
+.class-details--sign-up-btn {
+  margin: 3rem 0 0 0;
+}
+
+.login {
+  justify-content: flex-start;
+  margin: 2rem 0 0 0;
+}
+
+.login--subheading {
+  position: absolute;
+  left: 0;
+  top: 26vh;
+}
+
+.login--form {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1.5rem;
+  margin: 4rem 0 0 0;
+}
+
+.login--input {
+  border-radius: 50px;
+  background-color: #fbfbfb;
+  border: solid 0.1rem #d4d4d4;
+  text-indent: 2rem;
+  color: #9e9e9e;
+  cursor: pointer;
+}
+.login--input::placeholder {
+  color: #d4d4d4;
+}
+
+.login--form-heading {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.search--content-wrapper {
+  gap: 1rem;
+}
+
+.search--input-icon-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.search--input {
+  background-color: #fbfbfb;
+  border: 0.15rem solid #d4d4d4;
+  border-radius: 50px;
+  text-indent: 3.5rem;
+}
+.search--input::placeholder {
+  color: #9e9e9e;
+  font-family: "poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.search--icon {
+  position: relative;
+  top: -5.1vh;
+  left: -9.3rem;
+  font-size: 1.3rem;
+  z-index: 3;
+}
+
+.Search--title {
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+.search--trainer-card {
+  margin-top: 0;
+}
+
+.search--trainers-cards-container {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: 40%;
+  overflow-x: auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.search--trainers-cards-container::-webkit-scrollbar {
+  display: none;
+}
+
+.search--classes-cards-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 42%;
+  gap: 1rem;
+  overflow-x: auto;
+  position: relative;
+  width: 100%;
+  height: 55vh;
+}
+.search--classes-cards-container::-webkit-scrollbar {
   display: none;
 }/*# sourceMappingURL=index.css.map */
