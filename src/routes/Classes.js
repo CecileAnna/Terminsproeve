@@ -3,6 +3,7 @@ import ClassesCards from "../components/ClassesCard";
 import PageHeader from "../components/PageHeader";
 import WrapperCenterContent from "../components/WrapperCenterContent";
 import Heading4 from "../subcomponents/texts/Heading4";
+import HeaderPwa from "../components/HeaderPwa";
 import { useState, useEffect } from "react";
 
 const Classes = () => {
@@ -79,6 +80,8 @@ const Classes = () => {
               </div>
             </div>
           </WrapperCenterContent>
+
+          <HeaderPwa />
         </>
       )}
     </>
