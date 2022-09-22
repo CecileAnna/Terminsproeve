@@ -10,6 +10,7 @@
       content="Trainer app web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -25,7 +26,7 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <!--adobe font import-->
-    <link rel="stylesheet" href="https://use.typekit.net/wfj6cre.css" />  
+    <link rel="stylesheet" href="https://use.typekit.net/wfj6cre.css" />
     <title>Trainer App</title>
   </head>
   <body>
@@ -42,4 +43,18 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <!-- <script>
+    if (`serviceWorker` in navigator) {
+      window.addEventListener(`load`, () => {
+        navigator.serviceWorker
+          .register("./serviceWorker.js")
+          .then((reg) => {
+            console.log("Service worker registered", reg);
+          })
+          .catch((err) => {
+            console.log("Error in service worker", err);
+          });
+      });
+    }
+  </script> -->
 </html>
