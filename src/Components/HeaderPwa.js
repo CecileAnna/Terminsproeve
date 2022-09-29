@@ -10,7 +10,7 @@ const HeaderPwa = () => {
         padding: "1rem",
         display: "flex",
         flexFlow: "column nowrap",
-        backdropFilter: "invert(90%)",
+        backdropFilter: "invert(30%)",
         gap: "1rem",
       }}
     >
